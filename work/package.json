@@ -1,0 +1,21 @@
+{
+  "name": "testing",
+  "version": "0.1.0",
+  "description": "Un server para hacer peticiones a la bd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "db",
+    "bd",
+    "artistas"
+  ],
+  "author": "Leonardo Rivas",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^4.12.0",
+    "nodemon": "^2.0.20"
+  }
+}
