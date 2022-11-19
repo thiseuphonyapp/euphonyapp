@@ -4,6 +4,7 @@ services:
   app:
     build: ./work
     #image: euphony
+    restart: unless-stopped
     environment:
       MONGO_URL: "mongodb://db:27017/test"
     depends_on:
@@ -16,3 +17,6 @@ services:
       - /usr/src/node_module
   db:
     image: mongo
+    #container_name: 
+    restart: unless-stopped
+
