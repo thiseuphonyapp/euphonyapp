@@ -1,7 +1,10 @@
-const express = require('express')
+const express = require('express');
 const path = require('path')
-const app = express()
+const router = express.Router();
 const port = 3000
+const app = express();
+app.use(router);
+
 
 // CHECK CONNECTION TO DB
 const MongoClient = require('mongodb').MongoClient
@@ -22,8 +25,4 @@ app.get('/check', (req, res) => {
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`))
 
-// SERVE HTML
-
-app.get("/", function(req, res){
-  res.sendFile(__dirname + "/views/index-one.html");
-})
+app.use('/', express.static(path.join(__dirname, 'views')));
