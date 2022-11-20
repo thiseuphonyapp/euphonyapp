@@ -870,6 +870,12 @@ ABOUT ONE
  /*====================================
 SONGS ONE
 ====================================*/
+/*
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}*/
 
 #songs-one{
     height: auto;
@@ -894,6 +900,9 @@ SONGS ONE
   border-radius: 10px;
   background: rgb(240,240,240,.1);
   backdrop-filter:  blur(20px);
+  align-self: normal;
+  display: flex;
+  flex-direction: column;
 }
 #songs-one #songs-container .song .song-img img{
     position: relative;
@@ -926,6 +935,7 @@ SONGS ONE
     font-family: poppins;
     padding: 20px;
     padding-top: 10px;
+    margin-top: auto;
   }
   #songs-one #songs-container .song .song-details .artist-name , #songs-one #songs-container .song .song-details .song-name{
       padding-top: 5px;

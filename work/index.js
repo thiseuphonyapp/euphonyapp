@@ -1,7 +1,8 @@
+require("dotenv").config();
 const express = require('express');
 const path = require('path')
 const router = express.Router();
-const port = 3000
+
 const app = express();
 app.use(router);
 
@@ -23,6 +24,6 @@ app.get('/check', (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`Server listening on port ${port}!`))
+app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}!`))
 
 app.use('/', express.static(path.join(__dirname, 'views')));
