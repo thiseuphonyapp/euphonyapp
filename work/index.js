@@ -1,7 +1,8 @@
-require("dotenv").config();
-const express = require('express');
-const path = require('path')
+require("dotenv").config(); // a zero-dependency module that loads environment variables from a .env file into process.env
+const express = require('express'); 
+const path = require('path') // Module provides utilities for working with file and directory paths. 
 const router = express.Router();
+const bodyParser=require('body-parser')// body parsing middleware https://www.npmjs.com/package/body-parser
 
 const app = express();
 app.use(router);
