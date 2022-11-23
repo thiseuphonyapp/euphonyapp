@@ -24,7 +24,7 @@ app.get('/check', (req, res) => {
     }
   });
 });
+app.use('/', express.static(path.join(__dirname, 'views')));
+
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`))
-
-app.use('/', express.static(path.join(__dirname, 'views')));
