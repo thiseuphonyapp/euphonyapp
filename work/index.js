@@ -14,7 +14,7 @@ const MongoClient = require('mongodb').MongoClient
 // Connection URL
 const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/test';
 
-app.get('/check', (req, res) => {
+router.get('/check', (req, res) => {
   MongoClient.connect(mongoUrl, { useNewUrlParser: true }, (err, db) => {
     if (err) {
       res.status(500).send('💥 BOOM!! 💥: ' + err);
@@ -25,6 +25,6 @@ app.get('/check', (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`Server listening on port ${port}!`))
-
 app.use('/', express.static(path.join(__dirname, 'views')));
+
+app.listen(port, () => console.log(`Server listening on port ${port}!`))
