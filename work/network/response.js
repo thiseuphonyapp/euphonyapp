@@ -1,5 +1,7 @@
 // Lo bueno de hacerlo así es que si quiero cambiar algo en las respuestas lo puedo hacer desde aquí
 
+const { response } = require("express");
+
 exports.success = function(req, res, message, status) {
     res.status(status || 200).send({
         error: '', 
@@ -15,3 +17,5 @@ exports.error = function(req, res, message, status, details){
         body: ''
     });
 }
+
+module.exports = response;
