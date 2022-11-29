@@ -1,16 +1,28 @@
-const list = [];
+const { rejects } = require("assert");
+const { resolve } = require("path");
 
-function addMessage(message){
-    list.push(message)
+const list = []
+const songs = ['Cancion1', 'Cancion2'];
+
+function addComment(comment){
+    list.push(comment)
 }
 
-function getMessage(message){
+function getComment(comment){
     return list;
 }
 
+function getSongs(artist){
+    return songs;
+}
+
+
 module.exports={
-    add: addMessage,
-    list: getMessage,
+
+    list: getSongs,
+
+    //add: addComment,
+    //list: getComment,
     // get
     // update
     // delete
