@@ -13,7 +13,8 @@ app.use(router);
 
 
 router.get('/', function (req, res) { 
-  controller.getSongs()
+  const filterSongs = req.query.song || null; 
+  controller.getSongs(filterSongs) // Buscar una canción
     .then((songsList)=> {
       response.success(req, res, songsList, 200);
     })

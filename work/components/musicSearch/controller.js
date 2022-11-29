@@ -3,9 +3,9 @@ const { rejects } = require('assert');
 const { resolve } = require('path');
 const store= require('./store');
 
-function getSongs(){
+function getSongs(filterSongs){
     return new Promise((resolve, reject) =>{
-        resolve(store.list());
+        resolve(store.list(filterSongs));
     })
 }
 

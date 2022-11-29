@@ -1,16 +1,5 @@
 const mongoose = require('mongoose')
 
-// mongodb+srv://th3gent:jMoBL25LI0RjFq40@cluster0.i1k3l9y.mongodb.net/fake_euphony
-
-db.Promise = global.Promise;
-
-
-db.connect('mongodb+srv://th3gent:jMoBL25LI0RjFq40@cluster0.i1k3l9y.mongodb.net/fake_euphony', {
-    useNewUrlParser: true,
-})
-
-console.log('[DB] Conectada con exito')
-
 const Schema = mongoose.Schema;
 
 const Artistas = new Schema({
@@ -23,8 +12,6 @@ const Artistas = new Schema({
 
 })
 
-const model = mongoose.model('Artistas', Artistas)
-
 const mySchema = new Schema({
     category: String,
     search: {
@@ -32,5 +19,11 @@ const mySchema = new Schema({
         required: true,
     }
 });
+
+const Canciones = new Schema({
+    
+})
+
+const model = mongoose.model('Canciones', Canciones);
 
 module.exports= model;
