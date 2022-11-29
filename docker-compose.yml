@@ -4,9 +4,9 @@ services:
   app:
     build: ./work
     #image: euphony
-    restart: unless-stopped
+    restart: always 
     environment:
-      MONGO_URL: "mongodb://db:27017/test"
+        MONGO_URL: "mongodb://db:27017/test"
     depends_on:
       - db
     ports:
@@ -18,5 +18,10 @@ services:
   db:
     image: mongo
     #container_name: 
-    restart: unless-stopped
-
+    restart: always
+    ports:
+      - "27017"
+    container_name: euphony_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
