@@ -2,15 +2,15 @@ version: "3.8"
 
 services:
   app:
-    build: ./work
-    #image: euphony
+    #build: ./work
+    image: ialeonardorivas/euphony
     restart: always 
     environment:
         MONGO_URL: "mongodb://db:27017/test"
     depends_on:
       - db
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - ./work:/usr/src
       # Que no monte archivos en esta ruta

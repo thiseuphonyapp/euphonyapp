@@ -14,7 +14,6 @@ db.connect('mongodb+srv://th3gent:jMoBL25LI0RjFq40@cluster0.i1k3l9y.mongodb.net/
 console.log('[Store - db] Conectada con exito')
 
 function addComment(comment){
-    //list.push(comment);
     const myComment = new db.Model(comment);
     myComment.save();
 }
@@ -26,7 +25,7 @@ function getComment(comment){
 async function getSongs(filterSongs){
     let filter = {}; //filtro por defecto
     if (filterSongs !== null){
-        filter = { Nombre_cancion2: filterSongs };
+        filter = { Nombre_cancion: filterSongs };
     }
     const songs = await Model.find(filter);
     return songs;
